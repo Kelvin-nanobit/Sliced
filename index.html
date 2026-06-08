@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Create Campaign</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+<!-- sidebar -->
+  <aside class="sidebar">
+  <div class="sidebar-profile">
+    <div class="avatar"></div>
+    <span>Hi <strong>David</strong></span>
+  </div>
+   <nav class="sidebar-nav">
+
+      <div class="nav-item">
+        <div class="nav-item-wrap"> 
+               <img class = "nav-icon" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAFgAAABYCAYAAABxlTA0AAAACXBIWXMAACxLAAAsSwGlPZapAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAOdEVYdFNvZnR3YXJlAEZpZ21hnrGWYwAAAqVJREFUeAHt3T1WE2EUxvF7X2srK1kApqekYQFqHxYAvUqAY6FWfBQuIBuwspIFxIIyfcgCsLKKLXO9d0w0HD8Q8j45F3h+RcjJScH5n8xMMrl5RyWhzv7+qlxcPPO7G6L6+J9PNhv6c05GR0efJCGVZDo7O10p5aVcl9kXE9k+Oz4+l0RSBe7s7sar9o3c1I/Imx55IkkUSeJJr/fQA23JInx3oqV0JZE0gVX16v3t/zB7KomkCexxV6WOlXZrSCJPYJGaURj4vmBgMAYGY2AwBgZjYDAGBmNgMAYGY2AwBgZjYDAGBmNgMAYGY2AwBgZjYDAGBmNgMAYGY2AwBgZjYDAGBmNgMAYGuzQfHENz7ZSjWQziLXu+a63KdGUwG/jtN1mmUs79/x+MDg7G8w//DDydLI/53DSDc7eS2YmJ9GeT9m3gTq+35fUXG36mX+Ym7YvvFlYYt7KYtJ/+FKL4HcZF8GNZHNPiXcSaEES8YSjVjtz0O2/L98FgDAzGwGAMDMbAYAwMFoHT/HD6Lir+uXkshDIsfgZtIFSfn/AZHR4Oi9984KsYQLUff9qDnJ9aexXFherwuLMlbi59o9HZ2+tK02zy/MSNTLxb7An6sWuYPfjHJWWm6y0s9ZsNLeWFb0UbUoPqtjXNUrfIv60VlGbNHt963tZarcTMnmdZHIkfNMAYGIyBwRgYjIHBGBiMgcEYGIyBwRgYjIHBGBiMgcEYGIyBwRgYjIHBGBiMgcEYGIyBwRgYjIHBGBiMgcEYGIyBwTIFPpNKMl20L1PgOkPgqgNJJE3gdqY2rs+5IGua95JIqn2wibxbaNJetZ/tmp4PJJGvp6eTR+vrn7WUGP6+zgX8Yrr8tW8FHyWZdFelnYmVWFT1qoWS4jd+4/mR/Wy+A8Tvow4PU+JkAAAAAElFTkSuQmCC"   alt="plus-icon">
+              </div>
+        <span class="nav-label">Create Campaign</span>
+    </div>  
+      <div class="nav-item">
+        <div class="nav-item-wrap muted"> 
+              <img class="nav-icon" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAFgAAABYCAYAAABxlTA0AAAACXBIWXMAACxLAAAsSwGlPZapAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAOdEVYdFNvZnR3YXJlAEZpZ21hnrGWYwAABIlJREFUeAHtnEFPGkEUx99gE+HmofduLw1NL/YDmOAnKB57Eo89iQfBG2viAbjAsTf1E0g/gZho0lu9SZMm0lsPHuiF3ZrI9M0AFhFwZpl1p8v7JZuNMCD8ff7nvTezC0AQBEEQBEEQBEEQBKGP47orEAAGxEzeFovbeHI5gBC46adSG23X7ai+/gUQE0nv7WWA8xIKmxl5OJP0/TyeXdX3IYHHQGEdxnmNc56dMuQVaEACDxAem+x2t1Hc/MAOjEACg4zaHHheCRhzOJhloQUe+iweGQiJhRRY2oHn1VDYHITMQgl877OeZ9RnZ7EwAks78LzDMHx2FrEX+N3u7updIlEL02dnEVuBhR2kMDO4A8hDhMRSYFneep77XD47i0gFllHW7eZ4ImFOCM43UVgHLMGowGIiwRLzA3aQsnisiAjCcwcfq7eq1f3x8ZgqfeM46aAoEFcSYABRCaWLxWsU6pT1Pc8Z/nvKM2OuqPFHX/O2UBC1vgMxZ64IlqJxfqg4Qzt4tIc/SFuIceQOCSzwQNxTWIAonIdAFkHiqhNIYJy0ToDEVUJbYDGh4US2CoQS+hEs2nuEMloCy8Y0WYMWWgKLIgIILbQETjxcYSUUUBZ4NZ9fsaF58r+hLLCfTJK4ATDSiyCmoyxw0veVtwsR/1AW+LJe74jWIxBaaFlED6AJhBZ6aRrnZ0BooSXw8u3tEdmEHloCCx/ucb4PhDLaadr3arWOUXwJhBLB+sGMbcDI8g8xnUACt8rlNi5krgOJ/CSBKzkSWY25SmUhcqtSeY1Cb8HTQj94nvV6C5GNGOlFoNBH90Izdjw6CYq0jnG+IyN+BEz5mrAA0R/qZVxi9Rm7cJ1plz3JC056vayRrVOcb8JzrLYwdoTBsqU8HGKC6FfjHzMf+pqhpsCxaVeKIgi/uIsCCKs6BkuIXT9YTrzlcg5934pc3Yr9wfLaCd+f6MPjk6MqV9VqA08NuRLetw0HIiDyCE4XCqWU54mdmROPdLHIxRgIiMhwZL4ekW1EKrDc48bY0zvR+9tfMxCQoW1E4c9RR3BGeaSB7GBEaJXCyAiRCoy+29DoL2fe9Ddtz81IYSRar20IkUgF1u0vJxirBb0xxiQGaV2o/hz5JKfZX3YG92swxqg/h9HntiIPxv7yjupYzG+3x6/3MIEQ+qpSeW/an60QGL9cExRXrOWVS5zXICTG/Pnx7+f8N2hgTyWHkaM64aHI2XnSNhUmld2yM8hYXeNtYAks4eb8vPNybS0F6qmbc3NxEWpOKz4THg38XGco9JmfSn36cXDwS+c9rOqmiY7Yn+Xla9VdnKLPjCWxVkQ9N1Y1e0TapjPhYVSVTKZtYWBdN032DjQmPNNpm2nsbFdOmcEnDg0pbTOFlQLLtE2xupJpGy47gaXY3HB3lfsUS0ttsBRr0rRxlNM2tBOM+M9gKVYvGeEEJlKw9sQnGRM2si4LAouxflVZ3FcCU7eT4c/yBh+Yyg2yDeux1iKGYLXWQqv4idHaweMLVlMfsZr6CgRBEARBEARBEARBEMQj/gJ9A9UGvMEgVgAAAABJRU5ErkJggg==" 
+      alt="megaphone-icon">
+              </div>
+        <span class="nav-label muted">Audio demographic</span>
+    </div>
+
+    </nav>
+</aside>
+<!-- Main page -->
+  <main class="main">
+
+    <div class="topbar">
+      <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAFgAAABkCAYAAAACLffiAAAACXBIWXMAACxLAAAsSwGlPZapAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAOdEVYdFNvZnR3YXJlAEZpZ21hnrGWYwAABU1JREFUeAHtnbFuG0cQhmeOAdLkKquJH0BmkybqIgvWA0QPwBdwqjS2LMtIYXWShXSpoiZJE1WpwiqVA0hwxS4FrQcIG7liZ8A3nl0uZUk+ird7u7fDu/0AQbR1EIlfc//uzO7NIgjnwd7efQQY8MttQPyav0+B6IJfD8evXv0NwkEQTH93dwd6vSf8Mi+9gGhEALtvj4+nIJQMhNLf399gcV/CInEViBscIT+DYMQKDEVxUOk6Frn//PkOCEWkwDp6Z35bDaLvQShSI3jd6mpEu+sbRKrAeeDrG0OuB7eEJHBgksCBEZVo6NmDGuCKYsd64CI6hSwbUVGMJCUe0QXWohaFSoPVVMvPYMUZnkqlib+z2P9DRKIJrJMDNX/lRAFCQjTkdPokltCNC2yEfWyVSPggktCNCdx/8WIdPnx4Gjxil0F0Mj4+PoGGaETg/rNnAx6AnoIUiCYczT80Ec1BBTa13JfRo7acKX+uk/HR0SkEpAeBMOL+KrhO8CV/fbe2uQmX5+cjCEQQgZXfItEvjQ9kLvDdxSLnLPIbCIB3gU3k/sYf/B6sCojfhBLZq8DXbGF1xJ0zE9m7XXgTmMXNWdzfV8IWFqHs4uHDCYt8AZ7wVuxhcR+vtLifeKLuRPCEF4F1doY4gHaQ+1xIrW0RxncPWGCxqwrW8BiytrUFl2dntf24dgTrTSHtsIabEA3UuAI1qSWw9qr2WMNtcj2u1KSWwD4+gGg4eOpGsbPAJnrF7kfwBWZZrTvUWWCUWcDxT00vdrcIfmPoBjlHsXPByklgYw9id9MEwHnvm5PAnbGHOUSPwBE3i6jxhitK7po+u3rwA+gYrnettcB6RG1j5rYMxzHHWuA6I+qK4xRULhbRnqKODUTNRDC/UTcFdsRe4C7674xGZxGJiiSBA5MEDkwSODAuAntbcV01XNLlFMGBsRe4KLo6TQPs9b4CS1IE20DUiEV01oNdstiUydngUFGzElg/Z9FtAkewgwe1CqJvwRJbi+h6BN+3XcK3E7gourXYWQJP1azGIDuBu7VUXw6RVZBVFtgMcKnYrp6rtqB6BFv+5VoL38U2PlxdYNViIKGw2kpVSeAObpVaRuVgqyRw6/cB20L0qKpNVLWI5L83yavuG14qsHmCqLv1h0VU3L67PIJV84xEGXl/f3+pyHcK3N/ba8vDhWHg4FvmxQsFNjOHFL13s/RJpIUCS28bKwbEgWlHVkqpwMYa0ry3KkVxsGjF+bNHaU1/nR8hUR1EZRUb9zY3/3l3fv7++o9uRLAu6GRZ8l0X+I5nkT9r/HQVwVedSlLFzB0W+XbnFC3wSncqkcatzim9VnQqkYbqnLK1Nb08O/svQ8TtJG4ATBKSdeiR2KZRBaGNLM13g7Ke9qYFJtPNjBOhuMhUW25I+IdoMj46ep1RUZyqf0DCL4i6R3GmGsqrXrpJZI+otrnmKDadyXGBYsqFin95WqHS5DSrcAVRnXN3yNbw19V/lV13V30zUQ5b7ST2iQeJRCKRSDRK1LOMmtg1xKP7MObo/gXEZNYebBsCgrNSQDSB41bTsix49sgR7K0fuwtxBVYnfIf9/ZPYZ8tFFZiIXkNIBFQKowqsoytkPRrxT4hM/BWNLAtz9BjicHx4GNV/FdEF5sqTOh7S94lYUx7cGjsz7i5ErMlpMXwOeFyPlVLZCnbcmQ1qwxzXo9+gmhPXPY9jdkbcHyAEEQIrTNF/yInBGrgV/dUBfD9dL3ZLQNS5ynMsD1ad6iN+2WYknac8R6TAc8zKyjaoiJ51P53ZB6LKAN/y18jUGsQJO+cjWVqcyjLSi7EAAAAASUVORK5CYII="
+      alt="setting">
+      <img src="data:image/png;base64,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" 
+      alt="setting">
+    </div>
+<!-- heading -->
+    <h1>Welcome </h1>
+
+<!-- subtitle -->
+     <p class="subtitle">
+      Select your metrics and campaign targets below. This will enable us reach
+      your targets specifically tailored for your campaign.
+    </p>
+
+<!-- section -->
+     <div class="section-title">Choose your Audience</div>
+    <div class="audience-grid">
+      <div class="field-card">
+        <div class="field-label">State</div>
+        <select class="select-box" id="state-select">
+        <option value="">Select State</option>
+        <option value="Lagos">Lagos</option>
+        <option value="Federal Capital Territory">FCT(Abuja)</option>
+        <option value="Abia">Abia</option>
+        <option value="Adamawa">Adamawa</option>
+        <option value="Akwa Ibom">Akwa Ibom</option>
+        <option value="Anambra">Anambra</option>
+        <option value="Bauchi">Bauchi</option>
+        <option value="Bayelsa">Bayelsa</option>
+        <option value="Benue">Benue</option>
+        <option value="Borno">Borno</option>
+        <option value="Cross River">Cross River</option>
+        <option value="Delta">Delta</option>
+        <option value="Ebonyi">Ebonyi</option>
+        <option value="Edo">Edo</option>
+        <option value="Ekiti">Ekiti</option>
+        <option value="Enugu">Enugu</option>
+        <option value="Gombe">Gombe</option>
+        <option value="Imo">Imo</option>
+        <option value="Jigawa">Jigawa</option>
+        <option value="Kaduna">Kaduna</option>
+        <option value="Kano">Kano</option>
+        <option value="Katsina">Katsina</option>
+        <option value="Kebbi">Kebbi</option>
+        <option value="Kogi">Kogi</option>
+        <option value="Kwara">Kwara</option>
+        <option value="Zamfara">Zamfara</option>
+        <option value="Nasarawa">Nasarawa</option>
+        <option value="Niger">Niger</option>
+        <option value="Ogun">Ogun</option>
+        <option value="Ondo">Ondo</option>
+        <option value="Osun">Osun</option>
+        <option value="Oyo">Oyo</option>
+        <option value="Plateau">Plateau</option>
+        <option value="Rivers">Rivers</option>
+        <option value="Sokoto">Sokoto</option>
+        <option value="Taraba">Taraba</option>
+        <option value="Yobe">Yobe</option>
+        </select>
+      </div>
+      <div class="field-card">
+        <div class="field-label">LGA</div>
+        <select class="select-box" id="lga-select">
+        <option value="">Select LGA</option>
+        <option value="Lagos Island">Lagos Island</option>
+        </select>
+      </div>
+      <div class="field-card">
+        <div class="field-label" >Ward</div>
+        <select class="select-box" id="ward-select">
+          <option value="">Select Ward</option>
+        </select>
+      </div>
+      <div class="field-card">
+        <div class="field-label">Registration Area</div>
+        <select class="select-box" id="registration-area-select">
+          <option value="">Select Registration Area</option>
+        </select>
+      </div>
+      <div class="field-card">
+        <div class="field-label">Polling Unit</div>
+        <select class="select-box" id="polling-unit-select">
+          <option value="">Select Polling Unit</option>
+        </select>
+      </div>
+      <div class="field-card">
+        <div class="field-label">Occupation</div>
+        <select class="select-box" id="occupation-select">
+          <option value="">Select Occupation</option>
+          <option value="student">Student</option>
+          <option value="teacher">Teacher</option>
+          <option value="engineer">Engineer</option>
+          <option value="doctor">Doctor</option>
+          <option value="lawyer">Lawyer</option>
+          <option value="artist">Artist</option>
+          <option value="accountant">Accountant</option>
+          <option value="nurse">Nurse</option>
+          <option value="salesperson">Salesperson</option>
+          <option value="tailor">Tailor</option>
+          <option value="other">Other</option>
+        </select>
+      </div>
+    </div>
+<!-- Age Range Section -->
+    <div class="age-range-section">
+      <div class="section-title">Age Range</div>
+      <div class="age-labels">
+        <span>18</span>
+        <span>55+</span>
+      </div>
+      <input type="range" min="18" max="55" value="0" />
+    </div>
+
+    <!-- Gender Section -->
+    <div class="gender-section">
+      <div class="section-title">Gender</div>
+      <div class="gender-options">
+        <div class="gender-option" id="male-option">
+          <div class="gender-icon male">
+            <img class="gender-icon" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACYAAABkCAYAAADqrULJAAAACXBIWXMAACxLAAAsSwGlPZapAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAOdEVYdFNvZnR3YXJlAEZpZ21hnrGWYwAAAmBJREFUeAHtm4FVwjAQQK9M0A2sE+gG4gS6AY7gBuIE6gTiBOoElAlkA+oE6gTnHWkF0YZecqH4vP/eveoLpL9tml7SkEEgiDikzRkFbwuKvC6aU1QUzxRllmUV7AIWonjB7txTFJAKqjyneMQwFhTnoA0fcV15LFegRX2mFqjHCDSgim5QlzeMbXPoLmEKphADhjf2Lgx9+x54pAra6N9JK7x1DzxlQ0jLma/QJ3YMaeH2m7cV+sSOID1FW4FPbBcEnbF36BGf2CukZ95WMAj5khIVpUStV8Un9gRpKX2FrWL10ZSQjjsIBV1SmIJ7iIUquUVd4rOLWozzMUkqvY1L0AL1MtgxaIPuzE0wDL58KTOVpeCF4OyxELfRXLqfDAJBl+jxWeCHPWcizc4rcJ3zjGLi60SNf8GvbaxurBcUJ/A9k+X2ws/Qhy5zEnU9/H0e6BZrRRW4dvhM9ZTQRQzdaJk7wW13UjN5MoOfuVtzQxx3qKeiOG09UHSdqGYPL+WyTaxPqYbRptQV7gerBzymmwYI5Za9OFHUe9rrMCK5nMV2MX6UsOxiWCz1iDuEpZj4yb8D8r5H4q2YmBQTk2JiUkxMiolJMTEpJibFxKSYmBQTk2JiUkxMiolJYbES9o8yQ/eGI26tjS78SvpwUE9nX8N+UFGc8h9f0+no5j7HFAdrH2zm6bXh6ff5xv/d3z1hj6+erbuQYmJSTEyKiUkxMSkmJsXEpJiYFBOTYmJSTEyKiUn5s2IV9MQ2sVRrWD8gFgxfxuyjgFhQ/9eCY9AC3aq8SYQgL/Gb4pbfu63zCaajr4z+NzvbAAAAAElFTkSuQmCC" alt="male">
+             </div>
+          <span class="gender-label">Male</span>
+        </div>
+        <div class="gender-option" id="female-option">
+          <div class="gender-icon female">
+             <img class="gender-icon" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAC8AAABkCAYAAAAWuGkDAAAACXBIWXMAACxLAAAsSwGlPZapAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAOdEVYdFNvZnR3YXJlAEZpZ21hnrGWYwAAAxxJREFUeAHtm4110zAUhW+YIJ2AsEE24G0AbNANYAPoBjBB6AR0g8IEKRPYTNBuIPRqKbUT/+g5Vp50qu8c5SS27F7d3Fg/tYGFMMasbbm2ZWdLZbrs3faPSAkn+qstjyaMihsJbayIrTl1OZTKlg00cMJD3U6nAfwHFxB++QaYJuOVWZZ7zOAN5Hy2ZYNlIduALxCyklR2X+/eljWW52m1Wl1JDpA6T4gjnOE4kuQAqfgPiIuoE5vjfEzeSypLxceKzKzzz7naxCRr8U+SylLxNeJSSypLxT8gLn8llaXi/yAud5LK0h6Wf1AV4lx1atvDvpMcIHLenpx/UD8QhxvEJtKossKlMMtMRA7CjcKEJM+ZVKsBGzM/Qns14W2siG+CRvC3JZ54RMW8rNv8cq62xVamWbfhGVPswV2hMMacCTivHrSna7Utt7bcuR546hyc+Ws0U8qN28zH8aDvxp6jRiDB4k2zSLrD+LjmtxPxD92xOR/zFs00cjtyfG3LJ9uAoNFrkHjnOC8MbRCf4AFa6MCMcBnhDHd8FFIxVHzsJY9jgpZAJM5fkqAlkEnx9ivkH9ile8VtSE8c4jxBB5qqECJetIq1IDRVIWXnJ00bFa+Ud89k7qecJ+hCYzunxGvl3UNjO1N3ftS8QfHKefeM5n7MeUIa0NCOMfHaeffQ0I4cnB80sVd8Inn3DOZ+yHlCWlDfxiHxqeTdQ30bc3G+18wT8Ynl3dOb+z7nCWlCxxv6xKeWdw8db8jJ+RNTO+ITzbvnJPfHzhPShtofjsWnmncPtT/k5nzH3IP4xPPu6eS+7TwhD8i/aYtPPe8e8m9ydP5g8rP4TPLuOeTeO0/IC+IXLz6XvHuIX3J1/tnslcv7Hvlxxc4T8oRYfG559xDH5hH5XCbbPLDzud6FsWbxNfKkZvG3yJNGt7vBJye+d5phmruU9iZt7s1SD4iZpsHnQDiDkH9lJksRr0URr0URr0URr0URr0URr0URr0URr0URr8WrFl/jPGpo4pYj5rCDNmbe84GVSeG5QMY14KeZfkqT9/NzhIss7v4HSpzsUg+E84kAAAAASUVORK5CYII=" alt="female">
+            </div>
+          <span class="gender-label">Female</span>
+        </div>
+      </div>
+    </div>
+
+  <!-- Campaign Message Section -->
+    <textarea class="message-box" placeholder="Campaign Message"></textarea>
+
+    <!-- Call to Action -->
+    <div class="cta-wrap">
+      <button class="btn-create">Create Campaign</button>
+    </div>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>
